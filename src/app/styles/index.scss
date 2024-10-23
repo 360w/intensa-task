@@ -1,0 +1,137 @@
+@import 'reset';
+@import 'vars/global';
+
+@font-face {
+    font-family: 'PT_Sans-Web-regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url(..//..//shared/assets/fonts/PT_Sans-Web-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'montserratRegular';
+    src: url(..//..//shared/assets/fonts/Montserrat-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratBlack';
+    src: url(..//..//shared/assets/fonts/Montserrat-Black.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratBold';
+    src: url(..//..//shared/assets/fonts/Montserrat-Bold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratExtraBold';
+    src: url(..//..//shared/assets/fonts/Montserrat-ExtraBold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratExtraLight';
+    src: url(..//..//shared/assets/fonts/Montserrat-ExtraLight.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratLight';
+    src: url(..//..//shared/assets/fonts/Montserrat-Light.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratMedium';
+    src: url(..//..//shared/assets/fonts/Montserrat-Medium.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratSemiBold';
+    src: url(..//..//shared/assets/fonts/Montserrat-SemiBold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserratThin';
+    src: url(..//..//shared/assets/fonts/Montserrat-Thin.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.app {
+    width: 100%;
+    overflow: hidden;
+
+    &__topBlock {
+        height: var(--height1000);
+        overflow: hidden;
+        background-color: rgba(223, 35, 29, 1);
+        position: fixed;
+        width: 100%;
+    }
+
+    .topBlock__content {
+        background: radial-gradient(at 50% 80%, rgba(251, 217, 39, 0.75) 20%, rgba(223, 35, 29, 1) 80%) no-repeat;
+
+        .content__mainLogo {
+            display: block;
+            padding-top: 63px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 100%;
+        }
+
+        .content__mainBP {
+            position: relative;
+            display: block;
+            bottom: 425px;
+            right: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            cursor: pointer;
+        }
+
+        .content__openBP {
+            position: relative;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin: auto;
+            width: fit-content;
+            height: fit-content;
+            right: 150px;
+
+            .openBP__text {
+                font-family: montserratSemiBold;
+                color: rgba(223, 35, 29, 1);
+                font-size: 36px;
+                position: relative;
+                right: 40px;
+                top: 75px;
+            }
+        }
+    }
+}
+
+.content-page {
+    display: flex;
+    flex-grow: 1;
+}
+
+.page-wrapper {
+    flex-grow: 1;
+    padding: 20px;
+}
