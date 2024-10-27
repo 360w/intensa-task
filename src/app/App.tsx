@@ -6,6 +6,7 @@ import OpenArrow from '..//shared/assets/icons/openArrow.svg';
 import MacaroniPlanet from '..//shared/assets/icons/macaroniPlanet.svg';
 import Heart from '..//shared/assets/icons/heart.svg';
 import Award from '..//shared/assets/icons/award.svg';
+// import { SwiperBP } from 'features/Swiper/SwiperBP';
 
 
 
@@ -28,6 +29,7 @@ const App: FC = () => {
             <div className='app__sliderBlock'>
                 <p style={{ color: 'rgba(251, 217, 39, 1)' }} className='sliderBlock__title'>
                     <span style={{ color: 'rgba(223, 35, 29, 1)' }}>ИСТОРИЯ</span> РОЛЛТОН</p>
+                {/* <SwiperBP /> */}
             </div>
             <div className='app__macaroniPlanet'>
                 <div className='macaroniPlanet__leftsideText'>

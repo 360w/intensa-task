@@ -21,6 +21,30 @@
     font-family: montserratSemiBold;
 }
 
+@mixin desktop {
+    @media screen and (min-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 641px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 450px) {
+        @content;
+    }
+}
+
 @font-face {
     font-family: 'montserratRegular';
     src: url(..//..//shared/assets/fonts/Montserrat-Regular.ttf);
@@ -42,18 +66,38 @@
     font-style: normal;
 }
 
+
+@mixin desktop {
+    @media screen and (max-width: 1221px) {}
+}
+
+
+
 .app {
     width: 100%;
 
     &__topBlock {
-        height: var(--height1000);
+        max-height: var(--height1000);
         overflow: hidden;
         background-color: rgba(223, 35, 29, 1);
         position: sticky;
-        width: 100%;
         top: 0;
-        z-index: 0;
+        width: 100%;
+        z-index: -1;
+
+        @include laptop {
+            max-height: 550px;
+        }
+
+        @include tablet {
+            max-height: 350px;
+        }
+
+        @include phone {
+            max-height: 225px;
+        }
     }
+
 
     .topBlock__content {
         background: radial-gradient(at 50% 80%, rgba(251, 217, 39, 0.75) 20%, rgba(223, 35, 29, 1) 80%) no-repeat;
@@ -61,32 +105,78 @@
         .content__mainLogo {
             @include centerPos;
             padding-top: 63px;
-            height: 100%;
+            width: 67%;
+            object-fit: contain;
+
+            @include laptop {
+                padding-top: 31.5px
+            }
+
+            @include phone {
+                padding-top: 15.75px
+            }
         }
 
         .content__mainBP {
             @include centerPos;
             position: relative;
-            bottom: 455px;
-            right: 50px;
+            bottom: 450px;
+            right: 3.5%;
             cursor: pointer;
+            width: 50%;
+
+            @include laptop {
+                bottom: 200px;
+            }
+
+            @include tablet {
+                bottom: 150px;
+            }
+
+            @include phone {
+                bottom: 100px;
+            }
         }
 
         .content__openBP {
             @include centerPos;
             position: relative;
             margin: auto;
-            width: fit-content;
-            height: fit-content;
-            right: 150px;
+            width: 16%;
+            right: 7%;
+
+            @include laptop {
+                bottom: 0px;
+            }
+
 
             .openBP__text {
                 font-family: montserratSemiBold;
                 color: rgba(223, 35, 29, 1);
-                font-size: 36px;
+                font-size: 32px;
                 position: relative;
-                right: 40px;
-                top: 75px;
+                right: 11%;
+                top: 70px;
+                text-wrap: nowrap;
+                letter-spacing: -1px;
+
+                @include laptop {
+                    font-size: 22px;
+                    right: 17%;
+                    top: 50px;
+                }
+
+                @include tablet {
+                    font-size: 14px;
+                    right: 17%;
+                    top: 25px;
+                }
+
+                @include phone {
+                    font-size: 10px;
+                    right: 17%;
+                    top: 20px;
+                }
             }
         }
     }
@@ -99,21 +189,71 @@
         font-family: montserratBold;
         font-size: 50px;
         line-height: 55px;
-        z-index: 1;
+
+
+        @include laptop {
+            max-height: 550px;
+
+            p {
+                font-size: 36px;
+                line-height: 40px;
+
+            }
+        }
+
+        @include laptop {
+            max-height: 350px;
+
+            p {
+                font-size: 22px;
+                line-height: 24px;
+
+            }
+        }
+
+        @include phone {
+            max-height: 225px;
+
+            p {
+                font-size: 18px;
+                line-height: 20px;
+
+            }
+        }
 
         .sliderBlock__title {
             @include centerPos;
             position: relative;
-            right: 384px;
+            right: 20.25%;
             width: fit-content;
+
+            @include laptop {
+                bottom: 100px;
+            }
+
+            @include phone {
+                right: 15%;
+            }
         }
     }
 
     &__macaroniPlanet {
         height: var(--height1000);
         background-color: rgba(251, 217, 39, 1);
-        z-index: 1;
+        z-index: 2;
         position: relative;
+
+        @include laptop {
+            max-height: 550px;
+        }
+
+        @include tablet {
+            max-height: 400px;
+        }
+
+        @include phone {
+            max-height: 225px;
+        }
     }
 
     .macaroniPlanet__leftsideText {
@@ -121,8 +261,18 @@
         position: relative;
         width: fit-content;
         max-height: fit-content;
-        right: 388px;
+        right: 20.5%;
         top: 150px;
+
+        @include laptop {
+            right: 19%;
+            top: 75px;
+        }
+
+        @include phone {
+            right: 15%;
+            top: 40px;
+        }
 
         .leftsideText__1 {
             color: rgba(223, 35, 29, 1);
@@ -142,27 +292,127 @@
             position: relative;
             top: 110px;
         }
+
+        @include laptop {
+            .leftsideText__1 {
+                font-size: 36px;
+                line-height: 40px;
+            }
+
+            .leftsideText__2 {
+                font-size: 52px;
+                line-height: 56px;
+                top: 40px;
+            }
+
+            .leftsideText__3 {
+                font-size: 20px;
+                line-height: 24px;
+                top: 55px;
+            }
+
+        }
+
+        @include tablet {
+            .leftsideText__1 {
+                font-size: 22px;
+                line-height: 24px;
+            }
+
+            .leftsideText__2 {
+                font-size: 36px;
+                line-height: 38px;
+                top: 20px;
+            }
+
+            .leftsideText__3 {
+                font-size: 14px;
+                line-height: 16px;
+                top: 25px;
+            }
+
+        }
+
+        @include phone {
+            .leftsideText__1 {
+                font-size: 18px;
+                line-height: 20px;
+            }
+
+            .leftsideText__2 {
+                font-size: 24px;
+                line-height: 26px;
+                top: 10px;
+            }
+
+            .leftsideText__3 {
+                font-size: 10px;
+                line-height: 12px;
+                top: 15px;
+            }
+
+        }
     }
 
     .macaroniPlanet__image {
         @include centerPos;
         position: relative;
-        left: 217px;
+        width: 61.20%;
+        left: 11.4%;
         bottom: 438px;
+
+        @include laptop {
+            bottom: 275px;
+            left: 14%;
+        }
+
+        @include tablet {
+            bottom: 175px;
+        }
+
+        @include phone {
+            bottom: 135px;
+            left: 15%;
+        }
     }
 
     &__childs {
         height: var(--height800);
         background-color: rgba(255, 251, 222, 1);
-        z-index: 1;
+        z-index: 2;
         position: relative;
+
+        @include laptop {
+            max-height: 450px;
+        }
+
+        @include tablet {
+            max-height: 300px;
+        }
+
+        @include phone {
+            max-height: 200px;
+        }
 
         .childs__rightsideText {
             @include centerPos;
             position: relative;
             width: fit-content;
             bottom: 501px;
-            left: 328px;
+            left: 17.2%;
+
+            @include laptop {
+                bottom: 275px;
+                left: 20%;
+            }
+
+            @include tablet {
+                bottom: 175px;
+            }
+
+            @include phone {
+                bottom: 115px;
+            }
 
             .rightsideText__1 {
                 @include green80;
@@ -173,27 +423,107 @@
                 position: relative;
                 top: 19px;
             }
+
+            @include laptop {
+                .rightsideText__1 {
+                    font-size: 52px;
+                    line-height: 56px;
+                }
+
+                .rightsideText__2 {
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+
+                @include tablet {
+                    .rightsideText__1 {
+                        font-size: 36px;
+                        line-height: 38px;
+                    }
+
+                    .rightsideText__2 {
+                        font-size: 14px;
+                        line-height: 16px;
+                        top: 10px;
+                    }
+                }
+
+                @include phone {
+                    .rightsideText__1 {
+                        font-size: 24px;
+                        line-height: 26px;
+                    }
+
+                    .rightsideText__2 {
+                        font-size: 10px;
+                        line-height: 12px;
+                        top: 10px;
+                    }
+                }
+            }
         }
 
         .childs__image {
             @include centerPos;
             position: relative;
-            right: 343px;
+            right: 18%;
+            width: 55.7%;
+
+            @include laptop {
+                right: 20%;
+                top: 25px;
+            }
+
+            @include tablet {
+                right: 21%;
+                top: 20px;
+            }
+
+            @include phone {
+                right: 22%;
+                top: 15px;
+            }
+
         }
     }
 
     &__award {
-        width: var(--height800);
+        height: var(--height800);
         background-color: rgba(251, 217, 39, 1);
         position: relative;
-        width: 100%;
+        z-index: 2;
+
+        @include laptop {
+            max-height: 450px;
+        }
+
+        @include tablet {
+            max-height: 300px;
+        }
+
+        @include phone {
+            max-height: 200px;
+        }
 
         .award__leftsideText {
             @include centerPos;
             position: relative;
             width: fit-content;
             top: 283px;
-            right: 411px;
+            right: 21.65%;
+
+            @include laptop {
+                right: 20%;
+                top: 140px;
+            }
+
+            @include tablet {
+                top: 100px;
+            }
+
+            @include phone {
+                top: 55px;
+            }
 
             .leftsideText__1 {
                 @include green80;
@@ -205,14 +535,71 @@
                 top: 19px;
             }
 
+            @include laptop {
+                .leftsideText__1 {
+                    font-size: 48px;
+                    line-height: 58px;
+                }
+
+                .leftsideText__2 {
+                    font-size: 24px;
+                    line-height: 28px;
+                }
+
+            }
+
+            @include tablet {
+                .leftsideText__1 {
+                    font-size: 36px;
+                    line-height: 38px;
+                }
+
+                .leftsideText__2 {
+                    font-size: 14px;
+                    line-height: 16px;
+                    top: 10px;
+                }
+            }
+
+            @include phone {
+                .leftsideText__1 {
+                    font-size: 24px;
+                    line-height: 26px;
+                }
+
+                .leftsideText__2 {
+                    font-size: 10px;
+                    line-height: 12px;
+                    top: 10px;
+                }
+            }
+
         }
 
         .award__image {
             @include centerPos;
             position: relative;
-            bottom: 208px;
-            left: 325px;
+            width: 51%;
+            bottom: 210px;
+            left: 17%;
+            max-width: 970px;
+            max-height: 800px;
+
+            @include laptop {
+                left: 25%;
+                bottom: 105px;
+            }
+
+            @include tablet {
+                left: 22%;
+                bottom: 65px;
+            }
+
+            @include phone {
+                bottom: 50px;
+            }
         }
+
     }
 }
 
@@ -227,4 +614,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
+
+    @include phone {
+        font-size: 10px;
+        line-height: 12px;
+        padding: 0px 20px;
+    }
 }
